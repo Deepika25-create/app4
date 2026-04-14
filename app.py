@@ -36,9 +36,9 @@ st.dataframe(filtered_data)
 st.subheader("Performance Summary") 
 col1, col2, col3 = st.columns(3)
  
-col1.metric("Math", int(filtered_data["Math"])) 
-col2.metric("Science", int(filtered_data["Science"])) 
-col3.metric("English", int(filtered_data["English"]))
+col1.metric("Math", int(filtered_data["Math"].values[0]))
+col2.metric("Science", int(filtered_data["Science"].values[0]))
+col3.metric("English", int(filtered_data["English"].values[0]))
  
 # chart data 
 chart_data = filtered_data.melt(id_vars=["Name"],
